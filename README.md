@@ -7,37 +7,20 @@
  
 *you should still exercise caution, and do your own research. no warranty is given or implied*
 
-* astroport reward contracts are not current and deprecated.
-* 
-# PFC-Fee-Splitter protocol contracts
+# PFC-Whitelist protocol helpers
 
 
 ## Components
 
-* [Fee Split](./contracts/pfc-fee-splitter) - Implementation of fee splitter.
-* [Dual incentive Rewards](./contracts/pfc-astroport-generator) - staking reward thingy for astroport 
-* [Vault](./contracts/pfc-vault-contract) - simple vault to work alongside the dual reward 
+* [Whitelist](./packages/pfc-whitelist) - simple library to add whitelist functionality to your contract
+* [Whitelist-dervive](./packages/pfc-whitelist-derive) - macros to make life easier
 
 
-# how do/can they interact ?
-
-![](./images/overview.png "overview")
-
-native denoms comes into the system via 'fee-splitter' contract. the funds get split via the allocation table
-and either TRANSFERed to a wallet, or SEND to a smart contract, in this case, the 'vault' contract.
-
-the vault accumulates the denoms, and allows people who hold the governance token (in astroport's case the LP token of the pair) to claim their portion when they choose.
-
-the person needs to deposit their governance token in to start accumulating rewards.
-
-the astroport-generator sits between the end-user and the vault itself, so the vault only sees a single address (the astroport smart contract) as the holder of it's LP tokens.
-it forwards the 'claim' function from astroport, and send rewards (in total for the smart contract).
-Astrport then determines how much of that sends to the individual. (how is out of scope)
 ## Development
 
 ### Environment Setup
 
-- Rust v1.56.1+
+- Rust v1.73.1+
 - `wasm32-unknown-unknown` target
 - Docker
 

@@ -1,42 +1,31 @@
 [workspace]
 members = [
-    # astroport is OLD and not up2date
-    #"packages/pfc-astroport_reward_holder",
-    #  "contracts/pfc-astroport-generator",
-    "packages/pfc-fee-split",
-    "packages/pfc-vault",
-    "packages/pfc-dust-collector",
-    "packages/pfc-dust-collector-kujira",
-    "packages/pfc-treasurechest",
-    "contracts/pfc-fee-splitter",
-    "contracts/pfc-vault-contract",
-    "contracts/pfc-treasurechest-contract",
-    "contracts/pfc-dust-collector-kujira",
-    "integration"
+    "packages/pfc-whitelist",
+    "packages/pfc-whitelist-derive",
 ]
 resolver = "2"
 
 [workspace.package]
-version = "1.5.0"
+version = "2.0.0"
 authors = ["PFC <pfc@pfc.zone>"]
 edition = "2021"
 rust-version = "1.73.0"
 license = "Apache-2.0"
 homepage = "https://pfc.zone"
-repository = "https://github.com/PFC-Validator/pfc-fee-split"
-documentation = "https://github.com/PFC-Validator/pfc-fee-split#readme"
+repository = "https://github.com/PFC-Validator/PFC-whitelist"
+documentation = "https://github.com/PFC-Validator/PFC-whitelist#readme"
 keywords = ["blockchain", "cosmos", "cosmwasm"]
 
 [workspace.dependencies]
-cw2 = "1.1.2"
-cw20 = "1.0.0"
+cw2 = "2.0.0"
+cw20 = "2.0.0"
 cw-item-set = "0.7.1"
 cw-ownable = "0.5.1"
 cw-ownable-derive = "0.5.1"
-cw-controllers = "1.1.2"
-cw-storage-plus = { version = "1.2.0", features = ["iterator"] }
-cosmwasm-schema = "1.5.3"
-cosmwasm-std = { version = "1.5.3", features = [
+cw-controllers = "2.0.0"
+cw-storage-plus = { version = "2.0.0", features = ["iterator"] }
+cosmwasm-schema = "2.0.1"
+cosmwasm-std = { version = "2.0.1", features = [
     # Kuji is  @ 1.2
     "cosmwasm_1_2",
     # Enable this if you only deploy to chains that have CosmWasm 1.4 or higher
@@ -50,28 +39,10 @@ schemars = { version = "0.8.16" }
 proc-macro2 = "1.0.51"
 quote = "1.0.23"
 syn = "2.0.55"
-#syn = "1.0.108"
 thiserror = "1.0.57"
-kujira = "1.0.1"
-pfc-whitelist-derive = {version="1.5.0", path = "packages/pfc-whitelist-derive" }
-pfc-whitelist = { version = "1.5.0",path = "packages/pfc-whitelist" }
-pfc-fee-split = { path = "packages/pfc-fee-split" }
-pfc-dust-collector-derive = { path = "packages/pfc-dust-collector-derive" }
-pfc-dust-collector = { path = "packages/pfc-dust-collector" }
-pfc-dust-collector-kujira = { path = "packages/pfc-dust-collector-kujira" }
-pfc-dust-collector-migaloo = { path = "packages/pfc-dust-collector-migaloo" }
-pfc-treasurechest = { path = "packages/pfc-treasurechest" }
-pfc-vault={path="packages/pfc-vault"}
-
-pfc-steak = "3.0.12"
+pfc-whitelist-derive = { version = "2.0.0", path = "packages/pfc-whitelist-derive" }
+pfc-whitelist = { version = "2.0.0", path = "packages/pfc-whitelist" }
 getrandom = { version = "0.2", features = ["js"] }
-prost = { version = "0.12.3", default-features = false, features = ["prost-derive"] }
-prost-types = { version = "0.12.3", default-features = false }
-#osmosis-std-derive = "0.20.1"
-osmosis-std-derive = "0.15.3"
-#osmosis-std-derive = {version = "0.20.1", features = ["backtraces"]}
-protobuf = { version = "3.3.0", features = ["with-bytes"] }
-cw-multi-test = { version = "0.20.0", features = ["cosmwasm_1_2"] }
 [profile.release]
 opt-level = 3
 debug = false
