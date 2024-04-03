@@ -17,14 +17,6 @@ documentation = "https://github.com/PFC-Validator/PFC-whitelist#readme"
 keywords = ["blockchain", "cosmos", "cosmwasm"]
 
 [workspace.dependencies]
-cw2 = "2.0.0"
-cw20 = "2.0.0"
-cw-item-set = "0.7.1"
-cw-ownable = "0.5.1"
-cw-ownable-derive = "0.5.1"
-cw-controllers = "2.0.0"
-cw-storage-plus = { version = "2.0.0", features = ["iterator"] }
-cosmwasm-schema = "2.0.1"
 cosmwasm-std = { version = "2.0.1", features = [
     # Kuji is  @ 1.2
     "cosmwasm_1_2",
@@ -32,17 +24,22 @@ cosmwasm-std = { version = "2.0.1", features = [
     # "cosmwasm_1_4",
     "iterator", "stargate"
 ] }
-cosmwasm-storage = "1.5.2"
-serde = { version = "1.0.196", default-features = false, features = ["derive"] }
-serde_json = "1.0.113"
+
 schemars = { version = "0.8.16" }
+serde = { version = "1.0.196", default-features = false, features = ["derive"] }
+cosmwasm-schema = "2.0.1"
+pfc-whitelist-derive = { version = "2.0.0", path = "packages/pfc-whitelist-derive" }
+cw-storage-plus = { version = "2.0.0", features = ["iterator"] }
+cw-ownable = "0.5.1"
+cw-ownable-derive = "0.5.1"
+
+thiserror = "1.0.57"
+pfc-whitelist = { version = "2.0.0", path = "packages/pfc-whitelist" }
+getrandom = { version = "0.2", features = ["js"] }
+
 proc-macro2 = "1.0.51"
 quote = "1.0.23"
 syn = "2.0.55"
-thiserror = "1.0.57"
-pfc-whitelist-derive = { version = "2.0.0", path = "packages/pfc-whitelist-derive" }
-pfc-whitelist = { version = "2.0.0", path = "packages/pfc-whitelist" }
-getrandom = { version = "0.2", features = ["js"] }
 [profile.release]
 opt-level = 3
 debug = false
