@@ -9,7 +9,8 @@
 
 # PFC-Whitelist protocol helpers
 
-
+This project initially started in [PFC-Fee-Split](https://github.com/PFC-Validator/PFC-Fee-split)
+and was moved to make it usable for cosmos-sdk-2.0 things
 ## Components
 
 * [Whitelist](./packages/pfc-whitelist) - simple library to add whitelist functionality to your contract
