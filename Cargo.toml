@@ -6,7 +6,7 @@ members = [
 resolver = "2"
 
 [workspace.package]
-version = "2.0.0"
+version = "2.0.1"
 authors = ["PFC <pfc@pfc.zone>"]
 edition = "2021"
 rust-version = "1.73.0"
@@ -28,18 +28,19 @@ cosmwasm-std = { version = "2.0.1", features = [
 schemars = { version = "0.8.16" }
 serde = { version = "1.0.196", default-features = false, features = ["derive"] }
 cosmwasm-schema = "2.0.1"
-pfc-whitelist-derive = { version = "2.0.0", path = "packages/pfc-whitelist-derive" }
 cw-storage-plus = { version = "2.0.0", features = ["iterator"] }
-cw-ownable = "0.5.1"
-cw-ownable-derive = "0.5.1"
+cw-ownable = { version = "2.0.0", git = "https://github.com/PFC-Validator/cw-plus-plus", branch = "v2.0.0-wip" }
+cw-ownable-derive = { version = "2.0.0", git = "https://github.com/PFC-Validator/cw-plus-plus", branch = "v2.0.0-wip" }
 
-thiserror = "1.0.57"
-pfc-whitelist = { version = "2.0.0", path = "packages/pfc-whitelist" }
 getrandom = { version = "0.2", features = ["js"] }
 
 proc-macro2 = "1.0.51"
 quote = "1.0.23"
 syn = "2.0.55"
+
+thiserror = "1.0.57"
+pfc-whitelist = { version = "2.0.1", path = "packages/pfc-whitelist" }
+pfc-whitelist-derive = { version = "2.0.1", path = "packages/pfc-whitelist-derive" }
 [profile.release]
 opt-level = 3
 debug = false
